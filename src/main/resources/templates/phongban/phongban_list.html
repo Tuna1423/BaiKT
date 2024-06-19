@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/extras/spring-security6"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{layout}">
+<head>
+    <meta charset="UTF-8">
+    <title>Danh sách Phòng ban</title>
+</head>
+<body>
+<section>
+    <h2>Danh sách Phòng ban</h2>
+    <table>
+        <thead>
+        <tr>
+            <th>Mã Phòng</th>
+            <th>Tên Phòng</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="phongban : ${phongbans}">
+            <td th:text="${phongban.maPhong}">Mã Phòng</td>
+            <td th:text="${phongban.tenPhong}">Tên Phòng</td>
+        </tr>
+        </tbody>
+    </table>
+</section>
+</body>
+</html>
